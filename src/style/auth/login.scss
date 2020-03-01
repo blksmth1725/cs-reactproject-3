@@ -1,4 +1,4 @@
 .login {
-  grid: content-s/content-e;
-  grid-column: s/e;
+  grid-row: content-start/content-end;
+  grid-column: c-start/c-end;
 }
