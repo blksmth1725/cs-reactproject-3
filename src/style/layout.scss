@@ -1,7 +1,7 @@
 .base-layout {
   display: grid;
-  grid-template-rows: [header-start] 50px [header-end navbar-start] 50px [navbar-end conetent-start] 1fr [content-end];
-  grid-template-columns: [start-c] 1fr [end-c];
+  grid-template-rows: [header-s] 50px [header-e navbar-s] 50px [navbar-e content-s] 1fr [content-e];
+  grid-template-columns: [s] 1fr [e];
 }
 
 $nav-bar-grey: #333333;
