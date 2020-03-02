@@ -1,15 +1,15 @@
 import React, { Component } from "react";
 
-import { reduxForm, Field } from "redux-form";
+import LoginForm from "./login-form";
 
 class Login extends Component {
 	render() {
-		return <div className="login">Login</div>;
+		return (
+			<div className="login">
+				<LoginForm className="login_form" />
+			</div>
+		);
 	}
 }
-
-Login = reduxForm({
-	form: "Login"
-})(Login);
 
 export default Login;
