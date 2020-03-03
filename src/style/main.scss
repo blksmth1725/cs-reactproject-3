@@ -1,16 +1,22 @@
 html {
-  font-size: 62.5%;
+	font-size: 62.5%;
 }
 
 *,
 *::after,
 *::before {
-  margin: 0;
-  padding: 0;
-  box-sizing: inherit;
+	margin: 0;
+	padding: 0;
+	box-sizing: inherit;
 }
 
-@import 'layout';
-@import 'header-navbar.scss';
-@import 'auth/login';
-@import 'auth/signup';
+body {
+	font-family: "Open Sans";
+}
+
+@import "layout";
+@import "header-navbar.scss";
+@import "auth/login";
+@import "auth/signup";
+@import "page-title";
+@import "form-fields";

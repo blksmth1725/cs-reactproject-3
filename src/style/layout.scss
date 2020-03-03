@@ -1,10 +1,12 @@
 .base-layout {
-  display: grid;
-  grid-template-rows: [header-start] 50px [header-end navbar-start] 50px [navbar-end content-start] 1fr [content-end];
-  grid-template-columns: minmax(20px, 250px) [c-start] 1fr [c-end] minmax(
-      20px,
-      250px
-    );
+	display: grid;
+	grid-template-rows: [header-start] 50px [header-end navbar-start] 50px [navbar-end content-start] 1fr [content-end];
+	grid-template-columns: minmax(20px, 250px) [c-start] 1fr [c-end] minmax(
+			20px,
+			250px
+		);
 }
 
 $nav-bar-grey: #333333;
+$off-whitish: #e6e6e6;
+$grey-one: #808080;

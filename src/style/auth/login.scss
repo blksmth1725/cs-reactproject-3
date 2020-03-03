@@ -1,4 +1,10 @@
 .login {
-  grid-row: content-start/content-end;
-  grid-column: c-start/c-end;
+	grid-row: content-start/content-end;
+	grid-column: c-start/c-end;
+}
+
+.login-form {
+	&-line {
+		border-top: 1px solid #ccc;
+	}
 }
