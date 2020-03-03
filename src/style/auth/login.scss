@@ -1,10 +1,32 @@
 .login {
 	grid-row: content-start/content-end;
 	grid-column: c-start/c-end;
+
+	&-form {
+		display: grid;
+		grid-template-rows:
+			[email-start] 64px [email-end password-start] 64px [password-end] minmax(
+				20px,
+				289px
+			)
+			[line-start] 2px [line-end login-start] 38px [login-end];
+	}
 }
 
 .login-form {
+	&-email {
+		grid-row: email-start/email-end;
+	}
+	&-password {
+		margin-top: 15px;
+		grid-row: password-start/password-end;
+	}
 	&-line {
 		border-top: 1px solid #ccc;
+		grid-row: line-start/line-end;
+	}
+	&-login {
+		margin-top: 39px;
+		grid-row: login-start/login-end;
 	}
 }
