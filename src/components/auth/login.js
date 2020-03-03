@@ -3,10 +3,14 @@ import React, { Component } from "react";
 import LoginForm from "./login-form";
 
 class Login extends Component {
+	onSubmit = fields => {
+		console.log({ fields });
+	};
+
 	render() {
 		return (
 			<div className="login">
-				<LoginForm className="login_form" />
+				<LoginForm onSubmit={this.onSubmit} className="login_form" />
 			</div>
 		);
 	}
