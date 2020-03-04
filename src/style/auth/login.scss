@@ -10,10 +10,15 @@
 				289px
 			)
 			[line-start] 2px [line-end login-start] 38px [login-end];
+		grid-template-columns: 1fr;
 	}
 }
 
 .login-form {
+	& > * {
+		grid-column: 1/-1;
+	}
+
 	&-email {
 		grid-row: email-start/email-end;
 	}
@@ -28,5 +33,10 @@
 	&-login {
 		margin-top: 39px;
 		grid-row: login-start/login-end;
+	}
+	&-details {
+		grid-row: 1/-1;
+		justify-self: end;
+		align-self: start;
 	}
 }
