@@ -47,12 +47,13 @@ class LoginForm extends Component {
 				<div className="login-form-line"></div>
 				<Field
 					className="login-form-login"
-					onClick={() => console.log("trying to submit")}
+					onClick={() => history.push("/account")}
 					title="Login"
 					type="submit"
 					name="login"
 					component={FormButton}
 				/>
+
 				<Details
 					className="login-form-details"
 					title="Quicklinks"

@@ -34,5 +34,18 @@
 		&:focus {
 			outline: none;
 		}
+
+		&:hover {
+			cursor: pointer;
+		}
+	}
+
+	&-grey {
+		width: 137px;
+		background-color: $grey-one;
+
+		&:hover {
+			cursor: pointer;
+		}
 	}
 }

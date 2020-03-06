@@ -38,5 +38,9 @@
 		grid-row: 1/-1;
 		justify-self: end;
 		align-self: start;
+
+		&:hover {
+			cursor: pointer;
+		}
 	}
 }
