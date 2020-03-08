@@ -1,21 +1,30 @@
-import React, { Component } from "react";
+import React, { Component } from 'react'
 
-import LoginForm from "./login-form";
-import PageTitle from "../page-title";
+import LoginForm from './login-form'
+import PageTitle from '../page-title'
+
+import { connect } from 'react-redux'
+import * as actions from '../../actions'
 
 class Login extends Component {
-	onSubmit = fields => {
-		console.log({ fields });
-	};
+  componentDidMount() {
+    this.props.setHeaderLinks([])
+    this.props.setNavbarLinks([])
+  }
 
-	render() {
-		return (
-			<div className="login">
-				<PageTitle className="login-page-title" title="Login" />
-				<LoginForm onSubmit={this.onSubmit} className="login_form" />
-			</div>
-		);
-	}
+  onSubmit = fields => {
+    console.log({ fields })
+  }
+
+  render() {
+    return (
+      <div className="login">
+        <PageTitle className="login-page-title" title="Login" />
+        <LoginForm onSubmit={this.onSubmit} className="login_form" />
+      </div>
+    )
+  }
 }
 
-export default Login;
+Login = connect(null, actions)(Login)
+export default Login
