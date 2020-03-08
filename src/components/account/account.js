@@ -9,11 +9,13 @@ class Account extends Component {
 	componentDidMount() {
 		const navbarLinks = [
 			{
+				id: 0,
 				title: "Purchase History",
 				active: false,
 				component: <PurchaseHistory />
 			},
 			{
+				id: 1,
 				title: "Account Information",
 				active: true,
 				component: <AccountInformation />
