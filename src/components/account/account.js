@@ -24,13 +24,13 @@ class Account extends Component {
       {
         id: 0,
         title: 'Purchase History',
-        active: false,
+        active: true,
         component: <PurchaseHistory />,
       },
       {
         id: 1,
         title: 'Account Information',
-        active: true,
+        active: false,
         component: <AccountInformation />,
       },
     ]
@@ -52,7 +52,7 @@ class Account extends Component {
   }
 
   render() {
-    return <div>{this.renderConent()}</div>
+    return <div className="account">{this.renderConent()}</div>
   }
 }
 

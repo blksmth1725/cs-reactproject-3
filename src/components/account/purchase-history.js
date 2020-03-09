@@ -1,9 +1,18 @@
-import React, { Component } from "react";
+import React, { Component } from 'react'
+
+import PageTitle from '../page-title'
 
 class PurchaseHistory extends Component {
-	render() {
-		return <div>Purchase History</div>;
-	}
+  render() {
+    return (
+      <div className="purchase-history">
+        <PageTitle
+          className="purchase-history-title"
+          title="Purchase History"
+        />
+      </div>
+    )
+  }
 }
 
-export default PurchaseHistory;
+export default PurchaseHistory
