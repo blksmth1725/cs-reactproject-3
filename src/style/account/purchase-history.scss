@@ -1,3 +1,14 @@
-// .purchase-history {
+.purchase-history {
+  &-title {
+    border-bottom: 1px solid #ccc;
+  }
+  &-border-bottom {
+    border-bottom: 1px solid #f2f2f2;
+  }
+}
 
-// }
+.purchases {
+}
+
+.purchase-details {
+}
