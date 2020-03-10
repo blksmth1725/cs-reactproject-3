@@ -1,11 +1,13 @@
-import { combineReducers } from "redux";
-import { reducer as form } from "redux-form";
+import { combineReducers } from 'redux'
+import { reducer as form } from 'redux-form'
 
-import headernavbar from "./headernavbar";
+import headernavbar from './headernavbarReducer'
+import user from './userReducer'
 
 const rootReducer = combineReducers({
-	form,
-	headernavbar
-});
+  form,
+  headernavbar,
+  user,
+})
 
-export default rootReducer;
+export default rootReducer
