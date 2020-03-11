@@ -1,20 +1,95 @@
 .purchase-history {
-  &-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    margin: 37px 0;
-  }
-  &-title {
-    border-bottom: 1px solid #ccc;
-  }
-  &-border-bottom {
-    border-bottom: 1px solid #f2f2f2;
-  }
+	&-content {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		margin: 37px 0;
+	}
+	&-title {
+		border-bottom: 1px solid #ccc;
+	}
+	&-border-bottom {
+		border-bottom: 1px solid #f2f2f2;
+	}
 }
 
 .purchases {
-  display: grid;
-  grid-gap: 10px;
-  grid-template-columns: repeat(auto-fit, 80px);
-  width: 360px;
+	display: grid;
+	grid-gap: 10px;
+	grid-template-columns: repeat(auto-fit, 80px);
+	width: 360px;
+}
+
+.purchase-detail {
+	display: grid;
+	grid-template-columns: [start] 1fr [middle] 1fr [end];
+	grid-template-rows: [start] 1fr [start-end] 1fr [middle-start] 25px [middle-end] 1fr [end-start] 1fr [end];
+	width: 550px;
+
+	&-order-date {
+		grid-column: start/middle;
+		grid-row: start/start-end;
+	}
+
+	&-order-number {
+		grid-column: start/middle;
+		grid-row: start-end/middle-start;
+	}
+
+	&-shipping {
+		grid-column: start/middle;
+		grid-row: middle-end/end;
+	}
+
+	&-price {
+		grid-column: middle/end;
+		grid-row: start/start-end;
+	}
+
+	&-credit-card {
+		grid-column: middle/end;
+		grid-row: start-end/middle-start;
+	}
+
+	&-track-shipment {
+		grid-row: middle-end/end-start;
+	}
+
+	&-pruchase-receipt {
+		grid-row: end-start/end;
+	}
+
+	&-track-shipment,
+	&-print-receipt {
+		justify-self: center;
+		grid-column: middle/end;
+		text-decoration-line: underline;
+		color: orange;
+		font-size: 14px;
+		font-weight: 600;
+	}
+}
+
+.purchase-detail-lable {
+	display: grid;
+	grid-template-rows: [start] 1fr [end];
+	grid-template-columns: [start] 1fr [middle] 1fr [end];
+	grid-gap: 10px;
+
+	& > * {
+		grid-row: start/end;
+	}
+
+	&-title {
+		grid-column: start/middle;
+		text-align: right;
+		font-weight: 600;
+		font-size: 12px;
+	}
+
+	&-value {
+		grid-column: middle/end;
+		text-align: left;
+		color: #666666;
+		font-size: 12px;
+	}
 }
