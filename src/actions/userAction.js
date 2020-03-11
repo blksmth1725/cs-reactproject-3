@@ -31,7 +31,7 @@ export function fetchUserPurchases() {
 				orderDate: new Date().toDateString(),
 				creditCard: "xxx-xxxx-0000",
 				user: {
-					name: "CHristian Sheen",
+					name: "Christian Sheen",
 					shippingAddress: "Rodeo Blvd 65th st"
 				}
 			},
