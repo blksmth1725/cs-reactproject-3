@@ -14,6 +14,7 @@
 	}
 
 	&-links {
+		cursor: pointer;
 		grid-column: links-start/links-end;
 		grid-row: 1/-1;
 		display: grid;
@@ -53,6 +54,7 @@
 	font-weight: normal;
 
 	& > * {
+		cursor: pointer;
 		grid-row: start/end;
 	}
 }

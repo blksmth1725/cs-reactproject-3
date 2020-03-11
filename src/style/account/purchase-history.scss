@@ -13,6 +13,7 @@
 }
 
 .purchases {
+	cursor: pointer;
 	display: grid;
 	grid-gap: 10px;
 	grid-template-columns: repeat(auto-fit, 80px);
@@ -60,6 +61,7 @@
 
 	&-track-shipment,
 	&-print-receipt {
+		cursor: pointer;
 		justify-self: center;
 		grid-column: middle/end;
 		text-decoration-line: underline;
