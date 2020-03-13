@@ -1,0 +1,51 @@
+.account-information {
+	&-form {
+		display: grid;
+		grid-template-rows: [name-start streetadress-start] 64px [name-end streetadress-end email-start city-start] 64px [email-end city-end state-start zipcode-start] 64px [state-end zipcode-end];
+		grid-template-columns: [start] 1fr [middle] 1fr [end];
+		grid-row-gap: 15px;
+	}
+}
+
+.account-information-form {
+	&-name {
+		grid-column: start/middle;
+		grid-row: name-start/name-end;
+	}
+
+	&-email {
+		grid-column: start/middle;
+		grid-row: email-start/email-end;
+	}
+
+	&-street-address {
+		grid-column: middle/end;
+		grid-row: name-start/name-end;
+	}
+
+	&-city {
+		grid-column: middle/end;
+		grid-row: email-start/email-end;
+	}
+
+	&-state {
+		grid-row: state-start/state-end;
+	}
+
+	&-zipcode {
+		grid-row: zipcode-start/zipcode-end;
+		transform: translateX(226px);
+	}
+
+	&-state,
+	&-zipcode {
+		grid-column: middle/end;
+		input {
+			width: 200px;
+		}
+	}
+
+	&-change-password {
+		transform: translateY(38px);
+	}
+}

@@ -74,7 +74,7 @@ export function fetchUserPurchases() {
 			{
 				id: 5,
 				title: "Purchase 6",
-				price: 55.55,
+				price: 12.75,
 				orderNumber: "OIUOE8787",
 				orderDate: new Date().toDateString(),
 				creditCard: "xxx-xxxx-0000",
@@ -86,7 +86,7 @@ export function fetchUserPurchases() {
 			{
 				id: 6,
 				title: "Purchase 7",
-				price: 55.55,
+				price: 20.16,
 				orderNumber: "QOWIUE767",
 				orderDate: new Date().toDateString(),
 				creditCard: "xxx-xxxx-0000",
@@ -98,7 +98,7 @@ export function fetchUserPurchases() {
 			{
 				id: 7,
 				title: "Purchase 8",
-				price: 55.55,
+				price: 97.55,
 				orderNumber: "867KLJNNO",
 				orderDate: new Date().toDateString(),
 				creditCard: "xxx-xxxx-0000",

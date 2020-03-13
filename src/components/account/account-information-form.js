@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 import { reduxForm, Field } from "redux-form";
-import { FormInput, FormButton } from "../form-fields";
+import { FormInput, FormButton, LongGreyButton } from "../form-fields";
 
 import history from "../../history";
 
@@ -11,10 +11,10 @@ class AccountInformationForm extends Component {
 		return (
 			<form
 				onSubmit={handleSubmit}
-				className={`${className} account-information`}
+				className={`${className} account-information-form`}
 			>
 				<Field
-					className="account-information-name"
+					className="account-information-form-name"
 					title="Name"
 					placeholder="Name"
 					type="name"
@@ -22,16 +22,15 @@ class AccountInformationForm extends Component {
 					component={FormInput}
 				/>
 				<Field
-					className="account-information-email"
+					className="account-information-form-email"
 					title="Email"
 					placeholder="Email"
 					type="email"
 					name="email"
 					component={FormInput}
 				/>
-
 				<Field
-					className="account-information-street-address"
+					className="account-information-form-street-address"
 					title="Street Address"
 					placeholder="Street Address"
 					type="address"
@@ -39,7 +38,7 @@ class AccountInformationForm extends Component {
 					component={FormInput}
 				/>
 				<Field
-					className="account-information-city"
+					className="account-information-form-city"
 					title="City"
 					placeholder="City"
 					type="city"
@@ -48,7 +47,7 @@ class AccountInformationForm extends Component {
 				/>
 
 				<Field
-					className="account-information-state"
+					className="account-information-form-state"
 					title="State"
 					placeholder="State"
 					type="state"
@@ -56,7 +55,7 @@ class AccountInformationForm extends Component {
 					component={FormInput}
 				/>
 				<Field
-					className="account-information-zipcode"
+					className="account-information-form-zipcode"
 					title="Zip Code"
 					placeholder="Zip Code"
 					type="zipcode"
@@ -64,15 +63,16 @@ class AccountInformationForm extends Component {
 					component={FormInput}
 				/>
 
-				<div className="account-information-line"></div>
 				<Field
-					className="account-information-login"
-					onClick={() => history.push("/account")}
-					title="Login"
-					type="submit"
-					name="login"
-					component={FormButton}
+					className="account-information-form-change-password"
+					onClick={() => console.log("trying to show password")}
+					lableTitle="Password"
+					title="Change Password"
+					type="button"
+					name="change-password"
+					component={LongGreyButton}
 				/>
+				<div className="account-information-form-line"></div>
 			</form>
 		);
 	}

@@ -33,3 +33,22 @@ export class FormButton extends Component {
 		);
 	}
 }
+
+export class LongGreyButton extends Component {
+	render() {
+		const { className, lableTitle, title, type, onClick, input } = this.props;
+		return (
+			<div className={`${className} form-button-long-grey`}>
+				<label className="form-button-long-grey-label">{lableTitle}</label>
+				<button
+					className={`form-button-long-grey-button`}
+					type={type}
+					{...input}
+					onClick={onClick}
+				>
+					{title}
+				</button>
+			</div>
+		);
+	}
+}

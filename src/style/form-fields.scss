@@ -49,3 +49,32 @@
 		}
 	}
 }
+
+.form-button-long-grey {
+	display: grid;
+	grid-gap: 6.5px;
+
+	&-button {
+		height: 40px;
+		width: 300px;
+		border-radius: 20px;
+		background-color: grey;
+
+		font-size: 16px;
+		color: white;
+
+		&:focus {
+			outline: none;
+		}
+
+		&:hover {
+			cursor: pointer;
+		}
+	}
+
+	&-label {
+		padding-left: 20px;
+		color: $grey-one;
+		font-size: 14px;
+	}
+}
