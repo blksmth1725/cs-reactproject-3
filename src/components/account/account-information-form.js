@@ -9,26 +9,64 @@ class AccountInformationForm extends Component {
 	render() {
 		const { className, handleSubmit } = this.props;
 		return (
-			<form onSubmit={handleSubmit} className={`${className} login-form`}>
+			<form
+				onSubmit={handleSubmit}
+				className={`${className} account-information`}
+			>
 				<Field
-					className="login-form-email"
+					className="account-information-name"
+					title="Name"
+					placeholder="Name"
+					type="name"
+					name="name"
+					component={FormInput}
+				/>
+				<Field
+					className="account-information-email"
 					title="Email"
 					placeholder="Email"
 					type="email"
 					name="email"
 					component={FormInput}
 				/>
+
 				<Field
-					className="login-form-password"
-					title="Password"
-					placeholder="Password"
-					type="password"
-					name="password"
+					className="account-information-street-address"
+					title="Street Address"
+					placeholder="Street Address"
+					type="address"
+					name="address"
 					component={FormInput}
 				/>
-				<div className="login-form-line"></div>
 				<Field
-					className="login-form-login"
+					className="account-information-city"
+					title="City"
+					placeholder="City"
+					type="city"
+					name="city"
+					component={FormInput}
+				/>
+
+				<Field
+					className="account-information-state"
+					title="State"
+					placeholder="State"
+					type="state"
+					name="state"
+					component={FormInput}
+				/>
+				<Field
+					className="account-information-zipcode"
+					title="Zip Code"
+					placeholder="Zip Code"
+					type="zipcode"
+					name="zipcode"
+					component={FormInput}
+				/>
+
+				<div className="account-information-line"></div>
+				<Field
+					className="account-information-login"
 					onClick={() => history.push("/account")}
 					title="Login"
 					type="submit"
