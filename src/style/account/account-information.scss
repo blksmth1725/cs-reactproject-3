@@ -1,7 +1,26 @@
 .account-information {
 	&-form {
 		display: grid;
-		grid-template-rows: [name-start streetadress-start] 64px [name-end streetadress-end email-start city-start] 64px [email-end city-end state-start zipcode-start] 64px [state-end zipcode-end];
+		grid-template-rows:
+			[name-start streetadress-start]
+			64px
+			[name-end streetadress-end email-start city-start]
+			64px
+			[email-end city-end state-start zipcode-start]
+			64px
+			[state-end zipcode-end change-password-start current-start]
+			64px
+			[change-password-end current-end new-start]
+			64px
+			[new-end confirm-start]
+			64px
+			[confirm-end]
+			minmax(20px, 81px)
+			[line-start]
+			2px
+			[line-end buttons-start]
+			10px
+			[buttons-end];
 		grid-template-columns: [start] 1fr [middle] 1fr [end];
 		grid-row-gap: 15px;
 	}
@@ -45,7 +64,43 @@
 		}
 	}
 
-	&-change-password {
-		transform: translateY(38px);
+	&-change-password,
+	&-current-password {
+		grid-column: start/middle;
+		grid-row: change-password-start/change-password-end;
+		transform: translateY(-38px);
+	}
+
+	&-new {
+		grid-column: start/middle;
+		grid-row: new-start/new-end;
+	}
+
+	&-confirm {
+		grid-column: start/middle;
+		grid-row: confirm-start/confirm-end;
+	}
+
+	&-new,
+	&-confirm {
+		transform: translateY(-20px);
+	}
+
+	&-line {
+		border-top: 1px solid #ccc;
+		grid-column: start/end;
+		grid-row: line-start/line-end;
+		margin-bottom: 24px;
+	}
+
+	&-cancel {
+		grid-column: start/middle;
+		grid-row: buttons-start/buttons-end;
+	}
+
+	&-update-information {
+		grid-column: start/middle;
+		grid-row: buttons-start/buttons-end;
+		transform: translateX(175px);
 	}
 }

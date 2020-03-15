@@ -6,6 +6,14 @@ import { FormInput, FormButton, LongGreyButton } from "../form-fields";
 import history from "../../history";
 
 class AccountInformationForm extends Component {
+	constructor() {
+		super();
+
+		this.state = {
+			showPasswords: false
+		};
+	}
+
 	render() {
 		const { className, handleSubmit } = this.props;
 		return (
@@ -62,17 +70,69 @@ class AccountInformationForm extends Component {
 					name="zipcode"
 					component={FormInput}
 				/>
+				<div key={3} className="account-information-form-line"></div>
 
-				<Field
-					className="account-information-form-change-password"
-					onClick={() => console.log("trying to show password")}
-					lableTitle="Password"
-					title="Change Password"
-					type="button"
-					name="change-password"
-					component={LongGreyButton}
-				/>
-				<div className="account-information-form-line"></div>
+				{this.state.showPasswords ? (
+					[
+						<Field
+							key={0}
+							className="account-information-form-current-password"
+							title="Current Password"
+							placeholder="Current Password"
+							type="password"
+							name="current"
+							component={FormInput}
+						/>,
+						<Field
+							key={1}
+							className="account-information-form-new"
+							title="New Password"
+							placeholder="New Password"
+							type="password"
+							name="new"
+							component={FormInput}
+						/>,
+						<Field
+							key={2}
+							className="account-information-form-confirm"
+							title="Confirm Password"
+							placeholder="Confirm Password"
+							type="password"
+							name="confirm"
+							component={FormInput}
+						/>,
+
+						<Field
+							key={4}
+							onClick={() => this.setState({ showPasswords: false })}
+							className="account-information-form-update-information"
+							title="Update Information"
+							type="submit"
+							name="update-information"
+							component={FormButton}
+						/>,
+						<Field
+							key={5}
+							className="account-information-form-cancel"
+							onClick={() => this.setState({ showPasswords: false })}
+							title="Cancel"
+							type="button"
+							name="cancel"
+							grey={true}
+							component={FormButton}
+						/>
+					]
+				) : (
+					<Field
+						className="account-information-form-change-password"
+						onClick={() => this.setState({ showPasswords: true })}
+						lableTitle="Password"
+						title="Change Password"
+						type="button"
+						name="change-password"
+						component={LongGreyButton}
+					/>
+				)}
 			</form>
 		);
 	}
