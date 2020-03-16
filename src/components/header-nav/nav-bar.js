@@ -1,35 +1,42 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
-import { connect } from 'react-redux'
-import * as actions from '../../actions'
+import { connect } from "react-redux";
+import * as actions from "../../actions";
 
 class NavBar extends Component {
-  render() {
-    return (
-      <div className="navbar">
-        {this.props.navbarLinks.map((link, index) => {
-          return (
-            <a
-              className={`navbar-link ${link.active ? 'orange-text' : ''}`}
-              key={index}
-              onClick={() => this.props.changeNavbarActive(link.id)}
-            >
-              {link.title}
-            </a>
-          )
-        })}
-      </div>
-    )
-  }
+	handleOnClick = link => {
+		this.props.changeNavbarActive(link.id);
+		if (this.props.onClick) {
+			this.props.onClick(link.id);
+		}
+	};
+	render() {
+		return (
+			<div className="navbar">
+				{this.props.navbarLinks.map((link, index) => {
+					return (
+						<a
+							className={`navbar-link ${link.active ? "orange-text" : ""}`}
+							key={index}
+							onClick={() => this.handleOnClick(link)}
+						>
+							{link.title}
+						</a>
+					);
+				})}
+			</div>
+		);
+	}
 }
 
 function mapStateToProps(state) {
-  const { navbarLinks } = state.headernavbar
-  return {
-    navbarLinks,
-  }
+	const { navbarLinks, onClick } = state.headernavbar;
+	return {
+		navbarLinks,
+		onClick
+	};
 }
 
-NavBar = connect(mapStateToProps, actions)(NavBar)
+NavBar = connect(mapStateToProps, actions)(NavBar);
 
-export default NavBar
+export default NavBar;
