@@ -3,13 +3,12 @@ import {
 	SET_SHOP_PRODUCTS,
 	FILTER_PRODUCTS_WITH_CATEGORY_ID
 } from "../actions/types";
-import actions from "redux-form/lib/actions";
 
 const INITIAL_STATE = {
 	categories: [],
-	selectedCategoryId: 0,
-	productsSelected: [],
-	products: []
+	products: [],
+	filteredProducts: []
+	// selectedCategoryId: 0,
 };
 
 export default function(state = INITIAL_STATE, action) {
@@ -28,9 +27,15 @@ export default function(state = INITIAL_STATE, action) {
 			};
 
 		case FILTER_PRODUCTS_WITH_CATEGORY_ID:
-			console.log(action.type);
+			let filteredProducts = [];
+			state.products.map(product => {
+				if (product.belongsTo.includes(action.payload)) {
+					filteredProducts.push(product);
+				}
+			});
 			return {
-				...state
+				...state,
+				filteredProducts
 				// selectedCategoryId
 			};
 
