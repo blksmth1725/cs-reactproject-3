@@ -1,24 +1,26 @@
 import {
-	setHeaderLinks,
-	setNavbarLinks,
-	changeNavbarActive
-} from "./headernavbarAction";
+  setHeaderLinks,
+  setNavbarLinks,
+  changeNavbarActive,
+} from './headernavbarAction'
 
-import { fetchUserPurchases, setPurchaseDetail } from "./userAction";
+import { fetchUserPurchases, setPurchaseDetail } from './userAction'
 
 import {
-	fetchShopCategories,
-	fetchShopProducts,
-	filterProductsWithCategoryId
-} from "./shop";
+  fetchShopCategories,
+  fetchShopProducts,
+  filterProductsWithCategoryId,
+  filterProductsWithQuery,
+} from './shop'
 
 export {
-	setHeaderLinks,
-	setNavbarLinks,
-	changeNavbarActive,
-	fetchUserPurchases,
-	setPurchaseDetail,
-	fetchShopCategories,
-	fetchShopProducts,
-	filterProductsWithCategoryId
-};
+  setHeaderLinks,
+  setNavbarLinks,
+  changeNavbarActive,
+  fetchUserPurchases,
+  setPurchaseDetail,
+  fetchShopCategories,
+  fetchShopProducts,
+  filterProductsWithCategoryId,
+  filterProductsWithQuery,
+}
