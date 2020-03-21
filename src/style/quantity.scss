@@ -1,8 +1,35 @@
 .quantity {
+	display: grid;
+	grid-template-rows: [start] 20px [middle] 20px [end];
+	grid-template-columns: [start] 60px [middle] 29px [end];
+
+	&-count,
+	&-plus,
+	&-minus {
+		border: 1px solid #e6e6e6;
+		display: grid;
+		justify-items: center;
+		align-content: center;
+		height: 20px;
+		width: 29px;
+		grid-column: middle/end;
+	}
+
 	&-count {
+		grid-row: start/end;
+		grid-column: start/middle;
+		height: 40px;
+		width: 60px;
+		border-radius: 3px 0 0 3px;
+		font-size: 23px;
+		color: #333;
 	}
 	&-plus {
+		border-radius: 0 3px 0 0;
+		grid-row: start/middle;
 	}
 	&-minus {
+		border-radius: 0 0 3px 0;
+		grid-row: middle/end;
 	}
 }
