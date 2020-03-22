@@ -1,0 +1,60 @@
+.shop-cart {
+	display: grid;
+	grid-template-rows: [toggle-start] 40px [toggle-end content-start] 1fr [content-end];
+	grid-template-columns: [start] 1fr [end];
+	grid-gap: 15px;
+	justify-self: end;
+
+	&-toggle {
+		grid-row: toggle-start/toggle-end;
+		grid-column: start/end;
+
+		display: grid;
+		justify-items: center;
+		align-items: center;
+		justify-self: end;
+	}
+
+	&-content {
+		grid-row: content-start/content-end;
+		grid-column: start/end;
+	}
+}
+
+.shop-cart {
+	&-toggle {
+	}
+
+	&-content {
+		height: 675px;
+		width: 520px;
+		background-color: #333333;
+		box-shadow: -3px 20px 0 rgba(0, 0, 0, 0.2);
+	}
+}
+
+.cart-button {
+	color: white;
+	background-color: #333333;
+	font-size: 28px;
+	border-radius: 25px 0 0 25px;
+	height: 40px;
+	width: 76px;
+}
+
+.cart-content {
+	&-title {
+		font-weight: 600;
+		font-size: 30px;
+		font-family: "Titillium Web";
+		color: white;
+	}
+
+	&-products {
+		display: grid;
+	}
+
+	&-footer {
+		display: grid;
+	}
+}
