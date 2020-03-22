@@ -1,4 +1,24 @@
 .shop {
 	grid-row: content-start/content-end;
 	grid-column: c-start/c-end;
+	display: grid;
+	grid-template-rows: [searchbar-start] 38px [searchbar-end products-start] 1fr [product-end];
+	grid-template-columns: [start] minmax(100px, 1035px) [end];
+	grid-gap: 100px;
+	justify-content: center;
+
+	&-search-bar {
+		grid-row: searchbar-start/searchbar-end;
+		grid-column: start/end;
+	}
+
+	&-products {
+		display: grid;
+		grid-row: products-start/products-end;
+		grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+		grid-column-gap: 25px;
+		grid-row-gap: 40px;
+		width: 100%;
+		justify-self: center;
+	}
 }

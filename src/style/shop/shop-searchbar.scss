@@ -23,7 +23,7 @@
 	width: 100%;
 	display: grid;
 	grid-template-rows: 35px [start] 1fr [end];
-	grid-template-columns: 18px [start] 20px [icon-end] 1fr [end];
+	grid-template-columns: 18px [start] 20px [icon-end] 1fr [end] 50px;
 
 	&-icon {
 		color: grey;
