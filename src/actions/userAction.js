@@ -1,9 +1,44 @@
-import { SET_USER_PURCHASES, SET_PURCHASE_DETAIL } from "./types";
+import {
+	SET_USER_PURCHASES,
+	SET_PURCHASE_DETAIL,
+	SET_CART_PRODUCTS
+} from "./types";
 
 export function setPurchaseDetail(id) {
 	return {
 		type: SET_PURCHASE_DETAIL,
 		payload: id
+	};
+}
+
+export function fetchCartProducts() {
+	return {
+		type: SET_CART_PRODUCTS,
+		payload: [
+			{
+				id: 0,
+				product: {
+					id: 0,
+					title: "JavaScript in the browser",
+					description:
+						"Learn all there is to know about JavaScripts powerful V8 engine",
+					price: 12.99,
+					belongsTo: [0, 1]
+				},
+				quanity: 2
+			},
+			{
+				id: 1,
+				product: {
+					id: 1,
+					title: "Graph Databases",
+					description: "Learn How to work with Graph Databases Online",
+					price: 9.99,
+					belongsTo: [0, 3]
+				},
+				quanity: 1
+			}
+		]
 	};
 }
 
