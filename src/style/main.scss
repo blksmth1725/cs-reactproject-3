@@ -1,35 +1,36 @@
 html {
-	font-size: 62.5%;
+  font-size: 62.5%;
 }
 
 *,
 *::after,
 *::before {
-	margin: 0;
-	padding: 0;
-	box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
 }
 
 body {
-	font-family: "Open Sans";
-	color: #808080;
+  font-family: 'Open Sans';
+  color: #808080;
 }
 
-@import "layout";
-@import "header-navbar.scss";
-@import "auth/login";
-@import "auth/signup";
-@import "page-title";
-@import "form-fields";
-@import "details";
-@import "auth/signup";
-@import "account/account-information.scss";
-@import "account/purchase-history.scss";
-@import "account/account.scss";
-@import "shop/shop.scss";
-@import "shop/shop-searchbar.scss";
-@import "./quantity.scss";
-@import "./orange-price-tag.scss";
-@import "./shop/shop-product.scss";
-@import "./shop/shop-cart.scss";
-@import "./shop/cart-product.scss";
+@import 'layout';
+@import 'header-navbar.scss';
+@import 'auth/login';
+@import 'auth/signup';
+@import 'page-title';
+@import 'form-fields';
+@import 'details';
+@import 'auth/signup';
+@import 'account/account-information.scss';
+@import 'account/purchase-history.scss';
+@import 'account/account.scss';
+@import 'shop/shop.scss';
+@import 'shop/shop-searchbar.scss';
+@import './quantity.scss';
+@import './orange-price-tag.scss';
+@import './shop/shop-product.scss';
+@import './shop/shop-cart.scss';
+@import './shop/cart-product.scss';
+@import './order/review';
