@@ -1,31 +1,33 @@
 import {
-	setHeaderLinks,
-	setNavbarLinks,
-	changeNavbarActive
-} from "./headernavbarAction";
+  setHeaderLinks,
+  setNavbarLinks,
+  changeNavbarActive,
+} from './headernavbarAction'
 
 import {
-	fetchUserPurchases,
-	setPurchaseDetail,
-	fetchCartProducts
-} from "./userAction";
+  fetchUserPurchases,
+  setPurchaseDetail,
+  fetchCartProducts,
+  addCartProduct,
+} from './userAction'
 
 import {
-	fetchShopCategories,
-	fetchShopProducts,
-	filterProductsWithCategoryId,
-	filterProductsWithQuery
-} from "./shop";
+  fetchShopCategories,
+  fetchShopProducts,
+  filterProductsWithCategoryId,
+  filterProductsWithQuery,
+} from './shop'
 
 export {
-	setHeaderLinks,
-	setNavbarLinks,
-	changeNavbarActive,
-	fetchUserPurchases,
-	setPurchaseDetail,
-	fetchShopCategories,
-	fetchShopProducts,
-	filterProductsWithCategoryId,
-	filterProductsWithQuery,
-	fetchCartProducts
-};
+  setHeaderLinks,
+  setNavbarLinks,
+  changeNavbarActive,
+  fetchUserPurchases,
+  setPurchaseDetail,
+  fetchShopCategories,
+  fetchShopProducts,
+  filterProductsWithCategoryId,
+  filterProductsWithQuery,
+  fetchCartProducts,
+  addCartProduct,
+}
