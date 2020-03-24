@@ -23,8 +23,8 @@ class Shop extends Component {
     const headerLinks = [
       {
         id: 0,
-        title: 'Login',
-        path: '/signin',
+        title: 'Logout',
+        path: '/login',
       },
     ]
     this.props.setHeaderLinks(headerLinks)
