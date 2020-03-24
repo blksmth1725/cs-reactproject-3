@@ -1,65 +1,93 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import * as actions from "../../actions";
-import ShopSearchBar from "./shopSearchBar";
-import ShopProduct from "./shop-product";
-import ShopCart from "./shopCart";
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import * as actions from '../../actions'
+import ShopSearchBar from './shopSearchBar'
+import ShopProduct from './shop-product'
+import ShopCart from './shopCart'
+import CartButton from './cart-button'
+import Icons from '../../helpers/icons'
+
+Icons()
 
 class Shop extends Component {
-	componentDidMount() {
-		// fetch shop products action creator
-		const headerLinks = [
-			{
-				id: 0,
-				title: "Login",
-				path: "/signin"
-			}
-		];
-		this.props.setHeaderLinks(headerLinks);
-		this.props.fetchShopCategories();
+  constructor() {
+    super()
 
-		// fetch nabar links
-		// set navbar links
-		this.props.fetchShopProducts();
-	}
+    this.state = {
+      showCart: true,
+    }
+  }
 
-	componentWillUpdate(nextProps) {
-		if (this.props != nextProps) {
-			this.props.setNavbarLinks(nextProps.categories, id =>
-				this.props.filterProductsWithCategoryId(id)
-			);
-		}
-		return true;
-	}
+  componentDidMount() {
+    // fetch shop products action creator
+    const headerLinks = [
+      {
+        id: 0,
+        title: 'Login',
+        path: '/signin',
+      },
+    ]
+    this.props.setHeaderLinks(headerLinks)
+    this.props.fetchShopCategories()
 
-	onSubmit = fields => {
-		this.props.filterProductsWithQuery(fields);
-	};
+    // fetch nabar links
+    // set navbar links
+    this.props.fetchShopProducts()
+  }
 
-	render() {
-		return (
-			<div className="shop">
-				<ShopSearchBar onSubmit={this.onSubmit} className="shop_search-bar" />
-				{/* shop search-bar */}
-				{/* shop products */}
-				<ShopCart />
-				<div className="shop-products">
-					{this.props.filteredProducts.map(product => {
-						return <ShopProduct {...product} key={product.id} />;
-					})}
-				</div>
+  componentWillUpdate(nextProps) {
+    if (this.props != nextProps) {
+      this.props.setNavbarLinks(nextProps.categories, id =>
+        this.props.filterProductsWithCategoryId(id),
+      )
+    }
+    return true
+  }
 
-				{/* cart button */}
-			</div>
-		);
-	}
+  onSubmit = fields => {
+    this.props.filterProductsWithQuery(fields)
+  }
+
+  handleAddToCart = () => {
+    if (
+      document.getElementById('shop-cart').classList.contains('cart-hidden')
+    ) {
+      document.getElementById('shop-cart').classList.remove('cart-hidden')
+    } else {
+      document.getElementById('shop-cart').classList.add('cart-hidden')
+    }
+  }
+
+  render() {
+    return (
+      <div className="shop">
+        <ShopSearchBar onSubmit={this.onSubmit} className="shop_search-bar" />
+        {/* shop search-bar */}
+        {/* shop products */}
+
+        <div className="shop-products">
+          {this.props.filteredProducts.map(product => {
+            return <ShopProduct {...product} key={product.id} />
+          })}
+        </div>
+        {this.state.showCart ? <ShopCart className="shop-cart" /> : ''}
+
+        {/* cart button */}
+        <CartButton
+          onClick={this.handleAddToCart}
+          className="shop-cart_button"
+          icon="shopping-cart"
+        />
+      </div>
+    )
+  }
 }
 
 function mapStateToProps(state) {
-	const { categories, filteredProducts } = state.shop;
-	return { categories, filteredProducts };
+  const { categories, filteredProducts } = state.shop
+  return { categories, filteredProducts }
 }
 
-Shop = connect(mapStateToProps, actions)(Shop);
+Shop = connect(mapStateToProps, actions)(Shop)
 
-export default Shop;
+export default Shop

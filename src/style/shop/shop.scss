@@ -1,24 +1,37 @@
 .shop {
-	grid-row: content-start/content-end;
-	grid-column: c-start/c-end;
-	display: grid;
-	grid-template-rows: [searchbar-start] 38px [searchbar-end products-start] 1fr [product-end];
-	grid-template-columns: [start] minmax(100px, 1035px) [end];
-	grid-gap: 100px;
-	justify-content: center;
+  grid-row: content-start/content-end;
+  grid-column: c-start/c-end;
+  display: grid;
+  grid-template-rows: [searchbar-start] 38px [searchbar-end] 57px [ products-start] 1fr [product-end];
+  grid-template-columns: [start] minmax(100px, 1035px) [end];
+  justify-content: center;
 
-	&-search-bar {
-		grid-row: searchbar-start/searchbar-end;
-		grid-column: start/end;
-	}
+  &-search-bar {
+    grid-row: searchbar-start/searchbar-end;
+    grid-column: start/end;
+  }
 
-	&-products {
-		display: grid;
-		grid-row: products-start/products-end;
-		grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-		grid-column-gap: 25px;
-		grid-row-gap: 40px;
-		width: 100%;
-		justify-self: center;
-	}
+  &-products {
+    display: grid;
+    grid-row: products-start/products-end;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    grid-column-gap: 25px;
+    grid-row-gap: 40px;
+    width: 100%;
+    justify-self: center;
+  }
+
+  &-cart,
+  &-cart_button {
+    // grid-row: 1/-1;
+    // grid-column: 1/-1;
+    // align-self: start;
+    // justify-self: end;
+
+    // grid-rows: ;
+
+    position: absolute;
+    top: 133px;
+    right: 0px;
+  }
 }

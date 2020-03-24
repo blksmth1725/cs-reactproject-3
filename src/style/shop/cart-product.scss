@@ -1,0 +1,43 @@
+.cart-product {
+  height: 130px;
+
+  display: grid;
+  grid-template-rows: [start] 1fr [middle] 1fr [end];
+  grid-template-columns: [start image-start] 130px [image-end] 35px [title-start quantity-start] 1fr [quantity-end] 20px [remove-start] 1fr [remove-end title-end price-start] 70px [price-end end];
+  align-items: end;
+
+  &-image {
+    grid-row: start/end;
+    grid-column: image-start/image-end;
+  }
+  &-title {
+    grid-row: start/middle;
+    grid-column: title-start/title-end;
+    align-self: start;
+
+    font-size: 18px;
+    font-family: 'Encode Sans Condensed';
+    color: #e6e6e6;
+  }
+
+  &-quantity {
+    grid-row: middle/end;
+    grid-column: quantity-start/quantity-end;
+    .quantity-count {
+      color: white;
+    }
+  }
+
+  &-remove {
+    grid-row: middle/end;
+    grid-column: remove-start/remove-end;
+    justify-self: start;
+    font-size: 14px;
+  }
+
+  &-price {
+    grid-row: middle/end;
+    grid-column: price-start/price-end;
+    align-self: center;
+  }
+}
