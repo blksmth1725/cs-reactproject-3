@@ -41,9 +41,9 @@ function CartFooter({ className, products }) {
 }
 
 class ShopCart extends Component {
-  componentDidMount() {
-    this.props.fetchCartProducts()
-  }
+  // componentDidMount() {
+  //   this.props.fetchCartProducts()
+  // }
 
   handleAddToCart = () => {
     if (

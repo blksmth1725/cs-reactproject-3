@@ -1,0 +1,32 @@
+.review-form {
+  &-legend {
+    grid-row: legend-start/legend-end;
+    grid-column: -1/1;
+    font-size: 14px;
+    border-bottom: 1px solid #cccccc;
+    padding-bottom: 11px;
+  }
+  &-products {
+    grid-column: 1/-1;
+    grid-row: product-start/product-end;
+    overflow-y: scroll;
+
+    display: grid;
+    grid-template-rows: repeat(auto-fit, 80px);
+    grid-row-gap: 15px;
+  }
+  &-line {
+    grid-column: 1/-1;
+    grid-row: line-start/line-end;
+    border-top: 1px solid #cccccc;
+    margin-bottom: 24px;
+  }
+  &-back {
+    grid-row: button-start/button-end;
+    grid-column: back-start/back-end;
+  }
+  &-proceed {
+    grid-row: button-start/button-end;
+    grid-column: proceed-start/proceed-end;
+  }
+}
