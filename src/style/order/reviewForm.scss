@@ -29,4 +29,50 @@
     grid-row: button-start/button-end;
     grid-column: proceed-start/proceed-end;
   }
+  &-details {
+    grid-row: 1/-1;
+    grid-column: 1/-1;
+    justify-self: end;
+    align-self: end;
+    transform: translateX(-40px) translateY(70px);
+  }
+}
+
+// .review-details {
+//   &-subtotal {
+//   }
+//   &-shipping {
+//   }
+//   &-tax {
+//   }
+//   &-total {
+//   }
+// }
+
+.review-detail {
+  display: grid;
+  grid-template-columns: [title-start]1fr [title-end] 65px [price-start] 1fr [price-end];
+  grid-template-rows: 1fr;
+  align-items: center;
+
+  &-title {
+    grid-column: title-start/title-end;
+    grid-row: 1/-1;
+    text-align: right;
+    font-size: 14px;
+  }
+  &-price {
+    grid-column: price-start/price-end;
+    grid-row: 1/-1;
+    font-size: 18px;
+    font-weight: 600;
+  }
+}
+.review-detail-orange {
+  margin-top: 18px;
+  &-price,
+  &-title {
+    font-weight: 600;
+    color: orange;
+  }
 }
