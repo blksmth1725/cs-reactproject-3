@@ -1,0 +1,53 @@
+.shipping {
+  grid-row: content-start/content-end;
+  grid-column: c-start/c-end;
+
+  &-form {
+    display: grid;
+    grid-template-rows:
+      [name-start] 64px [name-end] 35px [address-start] 64px [address-end city-start] 64px [city-end state-zip-start ] 64px [state-zip-end] minmax(
+        20px,
+        81px
+      )
+      [line-start] 2px [line-end button-start] 10px [button-end];
+    grid-template-columns: [back-start] 137px [back-end space-start] 40px [spcae-end use-this-address-start] 1fr [use-this-address-end] 1fr;
+    grid-row-gap: 15px;
+  }
+}
+
+.shipping-form {
+  &-name {
+    grid-row: name-start/name-end;
+  }
+  &-street-address {
+    grid-row: address-start/address-end;
+  }
+  &-city {
+    grid-row: city-start/city-end;
+  }
+  &-state,
+  &-zipcode {
+    grid-row: state-zip-start/state-zip-end;
+    grid-column: back-start;
+    input {
+      width: 200px;
+    }
+  }
+  &-zipcode {
+    transform: translateX(226px);
+  }
+  &-line {
+    grid-row: line-start/line-end;
+    grid-column: 1/-1;
+    border-top: 1px solid #ccc;
+    margin-bottom: 24px;
+  }
+  &-back {
+    grid-row: button-start/button-end;
+    grid-column: back-start/back-end;
+  }
+  &-use-this-address {
+    grid-row: button-start/button-end;
+    grid-column: use-this-address-start/use-this-address-end;
+  }
+}

@@ -23,7 +23,7 @@ class ReviewForm extends Component {
         <ReviewProducts className="review-form-products" />
         <div className="review-form-line"></div>
         <Field
-          onClick={() => history.push('/account')}
+          onClick={() => history.push('/information/shipping')}
           className="review-form-proceed"
           title="Proceed to Checkout"
           type="submit"
