@@ -1,0 +1,81 @@
+.payment {
+  grid-row: content-start/content-end;
+  grid-column: c-start/c-end;
+
+  &-form {
+    display: grid;
+    grid-template-rows:
+      [name-start] 64px [name-end card-start] 64px [card-end expiration-ccv-start] 64px [expiration-ccv-end] minmax(
+        20px,
+        81px
+      )
+      [line-start] 2px [line-end button-start] 10px [button-end];
+    grid-template-columns: [back-start] 137px [back-end space-start] 40px [space-end expiration-ccv-start] 1fr [expiration-ccv-end] 1fr;
+    grid-row-gap: 15px;
+  }
+}
+
+.payment-form {
+  &-name {
+    grid-row: name-start/name-end;
+  }
+  &-card {
+    grid-row: card-start/card-end;
+  }
+  &-expiration,
+  &-ccv {
+    grid-row: expiration-ccv-start/expiration-ccv-end;
+    grid-column: back-start;
+    input {
+      width: 200px;
+    }
+  }
+  &-ccv {
+    transform: translateX(226px);
+  }
+  &-line {
+    grid-row: line-start/line-end;
+    grid-column: 1/-1;
+    border-top: 1px solid #ccc;
+    margin-bottom: 24px;
+  }
+  &-proceed-and-checkout {
+    grid-row: button-start/button-end;
+    grid-column: expiration-ccv-start/expiration-ccv-end;
+    margin-top: 20px;
+  }
+  &-back {
+    grid-row: button-start/button-end;
+    grid-column: back-start/back-end;
+    margin-top: 20px;
+  }
+  &-order-summary {
+    grid-row: name-start;
+    grid-column: expiration-ccv-start/-1;
+    justify-self: end;
+  }
+  &-shipping-info {
+    grid-row: name-start;
+    grid-column: expiration-ccv-start/-1;
+    justify-self: end;
+    transform: translateY(170px);
+    font-size: 12px;
+  }
+}
+
+.small-text {
+  font-size: 14px;
+}
+
+.shipping-info {
+  width: 240px;
+  height: 150px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 30px 24px 24px;
+  grid-row-gap: 5px;
+
+  & * > {
+    grid-column: 1/-1;
+  }
+}

@@ -94,11 +94,14 @@
   }
 
   &-cancel {
+    margin-top: 20px;
     grid-column: start/middle;
     grid-row: buttons-start/buttons-end;
   }
 
+
   &-update-information {
+    margin-top: 20px;
     grid-column: start/middle;
     grid-row: buttons-start/buttons-end;
     transform: translateX(175px);

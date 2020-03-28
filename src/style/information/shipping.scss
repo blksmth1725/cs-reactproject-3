@@ -45,9 +45,16 @@
   &-back {
     grid-row: button-start/button-end;
     grid-column: back-start/back-end;
+    margin-top: 20px;
   }
   &-use-this-address {
     grid-row: button-start/button-end;
     grid-column: use-this-address-start/use-this-address-end;
+    margin-top: 20px;
+  }
+  &-order-summary {
+    grid-row: name-start;
+    grid-column: use-this-address-end/-1;
+    justify-self: end;
   }
 }
