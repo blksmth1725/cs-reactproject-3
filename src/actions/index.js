@@ -9,6 +9,7 @@ import {
   setPurchaseDetail,
   fetchCartProducts,
   addCartProduct,
+  logIn,
 } from './userAction'
 
 import {
@@ -30,4 +31,5 @@ export {
   filterProductsWithQuery,
   fetchCartProducts,
   addCartProduct,
+  logIn,
 }

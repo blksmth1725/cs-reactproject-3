@@ -13,7 +13,8 @@ class Login extends Component {
   }
 
   onSubmit = fields => {
-    console.log({ fields })
+    this.props.logIn(fields)
+    this.props.history.push('/account')
   }
 
   render() {

@@ -3,7 +3,23 @@ import {
   SET_PURCHASE_DETAIL,
   SET_CART_PRODUCTS,
   ADD_CART_PRODUCT,
+  AUTHENTICATE_USER,
 } from './types'
+
+export function logIn({ email, password }) {
+  console.log({ email, password })
+  return {
+    type: AUTHENTICATE_USER,
+    payload: {
+      user: {
+        id: 0,
+        name: 'Christian Sheen',
+        address: 'I Live here 12345',
+        cartProducts: [],
+      },
+    },
+  }
+}
 
 export function setPurchaseDetail(id) {
   return {
